@@ -12,7 +12,8 @@ module alu (
     localparam [3:0] ALU_AND = 4'b0011;
 
     always @(*) begin
-        result = 16'b0;   // set the default value first
+        // set the default value first
+        result = 16'b0;   
 
         case (alu_opcode)
             ALU_ADD: result = src_a + src_b;
@@ -24,5 +25,4 @@ module alu (
             default: result = 16'b0;
         endcase
     end
-
 endmodule
