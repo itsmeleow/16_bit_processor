@@ -1,0 +1,4 @@
+# Ignore all compiled workspace files from Vivado inside the build directory
+build/
+# keeping xpr file for collab
+!build/*.xpr
