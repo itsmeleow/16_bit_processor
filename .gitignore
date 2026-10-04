@@ -1,4 +1,15 @@
 # Ignore all compiled workspace files from Vivado inside the build directory
-build/
+build/*
+build/**/*
 # keeping xpr file for collab
 !build/*.xpr
+
+# Vivado runtime command logs and journal files
+*.log
+*.jou
+vivado.pid
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+.vscode/
