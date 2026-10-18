@@ -2,7 +2,8 @@ module alu (
     input  wire [15:0] src_a,
     input  wire [15:0] src_b,
     input  wire [3:0]  alu_opcode,
-    output reg  [15:0] result
+    output reg  [15:0] result,
+    output wire        zero_flag
 );
 
     // just initializing ALU OP codes for readability
@@ -13,7 +14,7 @@ module alu (
 
     always @(*) begin
         // set the default value first
-        result = 16'b0;   
+        result = 16'b0;
 
         case (alu_opcode)
             ALU_ADD: result = src_a + src_b;
@@ -25,4 +26,5 @@ module alu (
             default: result = 16'b0;
         endcase
     end
+    assign zero_flag = (result == 16'b0) ? 1'b1 : 1'b0;
 endmodule
