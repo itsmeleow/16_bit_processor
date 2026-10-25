@@ -1,7 +1,7 @@
-module instr_mem (
+module instr_mem #(
     parameter MEM_SIZE = 128,
-    parameter DATA_WIDTH = 16,
-
+    parameter DATA_WIDTH = 16
+)(
     input  wire [DATA_WIDTH-1:0] read_addr, // address to read instruction from    
     output wire [DATA_WIDTH-1:0] instruction //output instr to the CU
 );

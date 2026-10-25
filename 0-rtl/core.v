@@ -60,7 +60,7 @@ module core (
     );
 
     instr_mem im (
-        .addr(pc_out),
+        .read_addr(pc_out),
         .instruction(current_instruction)
     );
 

@@ -8,8 +8,8 @@ module imm_gen (
     localparam OPCODE_I_TYPE_BEQ   = 4'b0100;
     localparam OPCODE_I_TYPE_BNE   = 4'b0101;
     localparam OPCODE_J_TYPE       = 4'b0110;
-
-    assign opcode = instruction[15:12];  // Extract the opcode from the instruction
+    
+    wire [3:0] opcode = instruction[15:12];  // Extract the opcode from the instruction
 
     always @(*) begin
         case (opcode)
@@ -19,10 +19,10 @@ module imm_gen (
             OPCODE_I_TYPE_ALU,
             OPCODE_I_TYPE_BEQ, 
             OPCODE_I_TYPE_BNE: 
-                imm_value = {12{instruction[3]}, instruction[3:0]};
+                imm_value = {{12{instruction[3]}}, instruction[3:0]};
 
             default: 
-                imm_value <= 16'b0; // default case for instructions without immediate values
+                imm_value = 16'b0; // default case for instructions without immediate values
         endcase
     end
 endmodule

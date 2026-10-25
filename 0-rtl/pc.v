@@ -1,4 +1,4 @@
-module pc_counter(
+module pc(
     input  wire        clk,
     input  wire [15:0] pc_in,
     output reg  [15:0] pc_out

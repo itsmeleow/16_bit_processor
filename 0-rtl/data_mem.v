@@ -1,7 +1,7 @@
 module data_mem #(
     parameter MEM_SIZE = 256,
-    parameter DATA_WIDTH = 16,
-) (
+    parameter DATA_WIDTH = 16
+)(
     input  wire                  clk,
     input  wire                  mem_read,          // read enable
     input  wire                  mem_write,         // write enable
@@ -16,11 +16,10 @@ module data_mem #(
 
     always @(posedge clk) begin
         if (mem_write) begin
-            mem_array[addr << 1] <= write_data;  // write data to memory
+            mem_array[addr >> 1] <= write_data;  // write data to memory
         end
-    end
-
-    if (mem_read) begin
-           read_data <= mem_array[addr << 1];    // read data from memory
+        if (mem_read) begin
+           read_data <= mem_array[addr >> 1];    // read data from memory
+        end
     end
 endmodule
