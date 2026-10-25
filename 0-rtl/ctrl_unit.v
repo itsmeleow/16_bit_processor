@@ -50,12 +50,14 @@ module ctrl_unit (
                 mem_read = 1'b1;
                 alu_src = 1'b1; // Immediate value as src_b ALU operand
                 mem_to_reg = 1'b1;
+                alu_op = ALU_ADD;
             end
 
             // I-type (Store)
             OPCODE_I_TYPE_STORE: begin
                 mem_write = 1'b1;
                 alu_src = 1'b1;
+                alu_op = ALU_ADD;
             end
 
             // I-type (ALU)
