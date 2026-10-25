@@ -34,7 +34,7 @@ module ctrl_unit (
         alu_src = 1'b0;
         mem_to_reg = 1'b0;
         branch = 1'b0;
-        jump = 1'b0;    ```
+        jump = 1'b0;
         alu_op = ALU_ADD;
 
         case (opcode)
