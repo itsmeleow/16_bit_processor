@@ -2,9 +2,8 @@ module instr_mem (
     parameter MEM_SIZE = 128,
     parameter DATA_WIDTH = 16,
 
-    input wire [DATA_WIDTH - 1:0] read_addr, // address to read instruction from    
-
-    output wire [DATA_WIDTH - 1:0] instruction //output instr to the CU
+    input  wire [DATA_WIDTH-1:0] read_addr, // address to read instruction from    
+    output wire [DATA_WIDTH-1:0] instruction //output instr to the CU
 );
 
     reg [DATA_WIDTH - 1:0] memory [0:MEM_SIZE - 1]; //  words of 16-bit instruction memory 128 mem locations
@@ -32,6 +31,4 @@ module instr_mem (
     end
 
     assign instruction = memory[read_addr >> 1]; // divide by 2 to get the word address
-
-
 endmodule

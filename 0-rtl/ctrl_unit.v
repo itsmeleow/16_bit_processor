@@ -1,6 +1,6 @@
 module ctrl_unit (
-    input wire [3:0]  opcode,
-    input wire [3:0]  funct,
+    input  wire [3:0] opcode,
+    input  wire [3:0] funct,
     output reg        reg_write,
     output reg        mem_read,
     output reg        mem_write,
@@ -8,7 +8,7 @@ module ctrl_unit (
     output reg        mem_to_reg,
     output reg        branch,
     output reg        jump,
-    output reg [3:0]  alu_op
+    output reg  [3:0] alu_op
 );
 
     localparam OPCODE_R_TYPE       = 4'b0000;
@@ -91,5 +91,4 @@ module ctrl_unit (
             end
         endcase
     end
-
 endmodule
