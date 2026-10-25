@@ -21,10 +21,6 @@ module imm_gen (
             OPCODE_I_TYPE_BNE: 
                 imm_value = {12{instruction[3]}, instruction[3:0]};
 
-            // J-type
-            OPCODE_J_TYPE: 
-                imm_value = {4{instruction[11]}, instruction[11:0]};
-
             default: 
                 imm_value <= 16'b0; // default case for instructions without immediate values
         endcase

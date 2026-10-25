@@ -1,7 +1,9 @@
 module core (
-    input wire clk,
-    input wire rst_n,
-    output wire [7:0] uo_out
+    input  wire        clk,
+    input  wire        rst_n,
+    output wire [6:0]  seg,
+    output wire [3:0]  an,
+    output wire [15:0] led
 );
     // initialize the wires for interconnecting the modules
     wire [15:0] pc_in, pc_out;
@@ -34,7 +36,7 @@ module core (
     
     assign pc_plus2 = pc_out + 16'd2;
     assign pc_branch = pc_out + (imm_value << 1);
-    assign pc_jump = {pc_out[15:12], current_instruction[11:0]};
+    assign pc_jump = pc_plus2 + (current_instruction[11:0] << 1);
     assign branch_taken = branch & zero_flag;
     assign pc_in = !rst_n ? 16'h0 : (jump ? pc_jump : (branch_taken ? pc_branch : pc_plus2));
 
@@ -106,5 +108,9 @@ module core (
         .write_data(mem_write_data),
         .read_data(mem_read_data)
     );
+
+    assign led = alu_result; // display the ALU result on the LEDs
+
+    // add 7-segment display logic here
 
 endmodule
