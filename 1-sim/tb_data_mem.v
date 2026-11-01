@@ -70,3 +70,5 @@ module tb_data_mem;
 
         $finish; // End simulation
     end
+
+endmodule

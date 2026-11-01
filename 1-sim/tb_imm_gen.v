@@ -58,7 +58,7 @@ module tb_imm_gen;
         #10;
         task6;
         #10;
-        $finish
-    end
+        $finish;
+      end
 
 endmodule
