@@ -20,8 +20,8 @@ module instr_mem #(
         memory[3] = 16'h0123; // and
 
         //I types
-        memory[4] = 16'h112F; // lw  
-        memory[5] = 16'h212F; // sw
+        memory[4] = 16'h212F; // sw
+        memory[5] = 16'h112F; // lw  
         memory[6] = 16'h312F; // addi
         memory[7] = 16'h412F; // beq
         memory[8] = 16'h512F; // bne
