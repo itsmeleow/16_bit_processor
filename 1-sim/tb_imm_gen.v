@@ -44,8 +44,7 @@ module tb_imm_gen;
         end
     endtask
 
-    initial begin
-        
+    initial begin    
         task1;
         #10;
         task2;
@@ -60,5 +59,4 @@ module tb_imm_gen;
         #10;
         $finish;
       end
-
 endmodule

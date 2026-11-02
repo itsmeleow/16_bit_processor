@@ -52,5 +52,4 @@ module tb_pc;
 
         $finish; // End simulation
     end
-
 endmodule

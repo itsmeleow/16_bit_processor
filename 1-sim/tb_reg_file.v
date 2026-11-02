@@ -87,6 +87,4 @@ module tb_reg_file;
         #20; // Wait for 20 time units
     $finish; // End the simulation
     end
-
-
 endmodule
