@@ -117,10 +117,4 @@ module tb_ctrl_unit;
         #10;
         $finish;
     end
-
-
-
-
-
-
 endmodule

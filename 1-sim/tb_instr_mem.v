@@ -36,5 +36,4 @@ module tb_instr_mem;
 
     $finish;
   end
-
 endmodule

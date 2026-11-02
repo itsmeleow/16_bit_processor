@@ -63,9 +63,7 @@ module ctrl_unit (
             // I-type (ALU)
             OPCODE_I_TYPE_ALU: begin
                 reg_write = 1'b1;
-                mem_read = 1'b1;
                 alu_src = 1'b1;
-                mem_to_reg = 1'b1;
                 alu_op = ALU_ADD;
             end
 
